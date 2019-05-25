@@ -1,8 +1,9 @@
+// Snake Game
+
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
 #include <conio.h>
-//#include<graphics.h>
 
 using namespace std;
 
@@ -275,19 +276,17 @@ bool checkCollision(Snake *snake, Node *head)
 void moveSnake(Snake *snake, Node **head_ref, char **board, Food *food, char flag)
 {
     Node *temp = *head_ref;
-    char choice,choice2;
+    char choice;
     bool createfood;
     cout << "Enter:- w: forward, s: backward, a: left, d: right\n";
-    choice = (char)getch();
     while (1)
     {
-
-
-        if (!kbhit())
+        
+        if (kbhit())
         {
             createfood = false;
-
-            //choice = (char)getch();
+            
+            choice = (char)getch();
             Node *last;
             if (choice == 'X' || choice == 'x')
             {
@@ -443,22 +442,9 @@ void moveSnake(Snake *snake, Node **head_ref, char **board, Food *food, char fla
             // cout << "Enter:- w: forward, s: backward, a: left, d: right\n";
             // cin >> choice;
         }
-        else
-        {
-           choice = (char)getch();
-        }
-        int check;
-        for(int slow=1000000;slow>0;slow--)
-        {
-            for(int moreslow=100;moreslow>0;moreslow--)
-            {
-                  check=moreslow;
-            }
-
-        }
-
+        
     }
-
+    
     cout << "Thanks For playing!!!!\n";
 }
 
